@@ -69,12 +69,11 @@ public class BlackJack
 	{
 		boolean b = false;
 		if (getBankBest()>21 && getPlayerBest()<21)
-		{
 			b = true;
-		}
 		if (getBankBest()<=21 && getPlayerBest() <=21 && getPlayerBest()>getBankBest())
 			b = true;
-		
+		if (getPlayerBest()>21 && getBankBest()>21 && getPlayerBest()<getBankBest())
+			b = true;
 		return b;
 	}
 	
@@ -82,12 +81,11 @@ public class BlackJack
 	{
 		boolean b = false;
 		if (getPlayerBest()>21 && getBankBest()<21)
-		{
 			b = true;
-		}
 		if (getPlayerBest()<=21 && getBankBest() <=21 && getBankBest()>getPlayerBest())
 			b = true;
-		
+		if (getBankBest()>21 && getPlayerBest()>21 && getBankBest()<getPlayerBest())
+			b = true;
 		return b;
 	}
 	
