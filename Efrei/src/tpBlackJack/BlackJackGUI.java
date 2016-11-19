@@ -171,8 +171,7 @@ public class BlackJackGUI
 	{
 		File file = new File("./src/tpBlackJack/img/card_"+token+".gif");
 		if (!file.exists()) 
-		{ 
-			//throw new FileNotFoundException("Can't find "+file.getPath()); 
+		{  
 			throw new FileNotFoundException("Can't find "+file.getPath());
 		} 
 		ImageIcon icon = new ImageIcon(file.getPath()); 
