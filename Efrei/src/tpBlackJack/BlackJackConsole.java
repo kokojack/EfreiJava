@@ -94,6 +94,7 @@ public class BlackJackConsole
 		System.out.println("\nThe Bank draw : "+Bj.getBankHandString()+"\t");
 		System.out.println("\nYour draw : "+Bj.getPlayerHandString()+"\t");
 		
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner (System.in);
 		String rep = "y" ;
 		 while(rep.matches("y") && Bj.getPlayerBest()<=21)

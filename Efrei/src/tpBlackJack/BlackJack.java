@@ -1,6 +1,5 @@
 package tpBlackJack;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -68,6 +67,8 @@ public class BlackJack
 	public boolean isPlayerWinner()
 	{
 		boolean b = false;
+		if (getPlayerBest()==21 && getBankBest()!=21)
+			b = true;
 		if (getBankBest()>21 && getPlayerBest()<21)
 			b = true;
 		if (getBankBest()<=21 && getPlayerBest() <=21 && getPlayerBest()>getBankBest())
@@ -80,6 +81,8 @@ public class BlackJack
 	public boolean isBankWinner()
 	{
 		boolean b = false;
+		if (getBankBest()==21 && getPlayerBest()!=21)
+			b = true;
 		if (getPlayerBest()>21 && getBankBest()<21)
 			b = true;
 		if (getPlayerBest()<=21 && getBankBest() <=21 && getBankBest()>getPlayerBest())

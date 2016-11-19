@@ -1,5 +1,6 @@
 package tpBlackJack;
 
+@SuppressWarnings("serial")
 public class EmptyDeckException extends Exception 
 {
 	private String mes;
