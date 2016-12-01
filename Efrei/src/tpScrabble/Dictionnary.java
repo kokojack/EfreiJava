@@ -1,6 +1,8 @@
 package tpScrabble;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 import java.io.*;
 
 public class Dictionnary 
@@ -70,4 +72,37 @@ public class Dictionnary
 		ch +="]";
 		return ch;
 	}
+	
+	 public boolean mayBeComposed(String word, char[] letters)
+	 {
+		 boolean rep = true;
+		 boolean[] isUsed = new boolean[letters.length]; // isUsed is of the same size as letters 
+		 Arrays.fill(isUsed, false); // set all elements to false
+		 while (rep)
+		 {
+			 for (int i = 0; i < word.length(); i++)
+			 {
+				 for (int j = 0; j< letters.length; j++)
+				 {
+					 if (word.charAt(i) == letters[j] || !isUsed[j] )
+					 {
+						isUsed[j]= true;
+					 }
+					 else if (isUsed[j])
+					 {
+						 j = letters.length;
+						 i = word.length();
+						 rep = false;
+					 }
+					 if (!rep)
+					 {
+						 i = word.length();
+					 }
+				 }
+			 }
+		 }
+		 
+		return rep;
+		 
+	 }	
 }
