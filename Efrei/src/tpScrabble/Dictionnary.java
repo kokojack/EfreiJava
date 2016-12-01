@@ -75,34 +75,38 @@ public class Dictionnary
 	
 	 public boolean mayBeComposed(String word, char[] letters)
 	 {
-		 boolean rep = true;
-		 boolean[] isUsed = new boolean[letters.length]; // isUsed is of the same size as letters 
-		 Arrays.fill(isUsed, false); // set all elements to false
-		 while (rep)
-		 {
-			 for (int i = 0; i < word.length(); i++)
-			 {
-				 for (int j = 0; j< letters.length; j++)
-				 {
-					 if (word.charAt(i) == letters[j] || !isUsed[j] )
-					 {
-						isUsed[j]= true;
-					 }
-					 else if (isUsed[j])
-					 {
-						 j = letters.length;
-						 i = word.length();
-						 rep = false;
-					 }
-					 if (!rep)
-					 {
-						 i = word.length();
-					 }
-				 }
-			 }
-		 }
+		boolean rep = true;
+		boolean[] isUsed = new boolean[letters.length]; // isUsed is of the same size as letters 
+		Arrays.fill(isUsed, false); // set all elements to false
+		
+		for (int i = 0; i < word.length(); i++)
+		{
+			for (int j = 0; j< letters.length; j++)
+			{
+				if (word.charAt(i) == letters[j] && !isUsed[j])
+				{
+					rep = true;
+					isUsed[j] = true;
+					j = letters.length;
+				}	 
+				else 
+				{
+					rep = false;
+				}
+			}	 
+			if (rep == false)
+			{
+				i = word.length();
+			}
+		}
 		 
-		return rep;
-		 
+		return rep; 
 	 }	
+	 
+	 public static String replaceFrenchCharacter(String s)
+	 {
+		 String str;
+		 
+		 return str;
+	 }
 }

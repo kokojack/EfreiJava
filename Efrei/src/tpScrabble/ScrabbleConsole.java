@@ -29,24 +29,19 @@ public class ScrabbleConsole
 	public static void main(String[] args) 
 	{
 		ScrabbleConsole sce = new ScrabbleConsole();
-		char [] lettres = new char[7];
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("please enter a word");
 		String word = sc.nextLine();
 		Scanner sc1 = new Scanner(System.in);
 		System.out.println("please a letter list");
-		String letters = sc1.nextLine();
-		for (int i = 0; i < 7; i++)
+		char[] letters = sc1.nextLine().toCharArray();
+		if (sce.dico.mayBeComposed(word,letters) == true)
 		{
-			lettres[i] = (letters.charAt(i));
-		}
-		if (sce.dico.mayBeComposed(word,lettres))
-		{
-			System.out.println(word +"may be composed by with letters"+lettres[0]+", "+lettres[1]+", "+lettres[2]+", "+lettres[3]+", "+lettres[4]+", "+lettres[5]+", "+lettres[6]);
+			System.out.println(word +" may be composed by with letters "+Arrays.toString(letters));
 		}
 		else
-			System.out.println("Impossible");
+			System.out.println(word +" may not be composed with "+Arrays.toString(letters));
 	}
 
 }
