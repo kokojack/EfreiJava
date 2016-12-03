@@ -17,7 +17,7 @@ public class ScrabbleConsole
 		try
 		{
 			dico = new Dictionnary("./ListeMots/Dico");
-			System.out.println(dico.getWordsList().length()+"words loaded. From ADSL to oeuvée");
+			System.out.println(dico.getWordsList().size()+"words loaded. From ADSL to oeuvée");
 		}
 		catch (FileNotFoundException ex)
 		{
@@ -30,18 +30,35 @@ public class ScrabbleConsole
 	{
 		ScrabbleConsole sce = new ScrabbleConsole();
 		
-		Scanner sc = new Scanner(System.in);
+		/*Scanner sc = new Scanner(System.in);
 		System.out.println("please enter a word");
-		String word = sc.nextLine();
+		String word0 = sc.nextLine();
+		String word1 = word0.toLowerCase();
+		
 		Scanner sc1 = new Scanner(System.in);
 		System.out.println("please a letter list");
-		char[] letters = sc1.nextLine().toCharArray();
-		if (sce.dico.mayBeComposed(word,letters) == true)
+		char[] letters = sc1.nextLine().toLowerCase().toCharArray();
+		String word2 = sce.dico.replaceFrenchCharacter(word1);
+		
+		
+		if (sce.dico.mayBeComposed(word2,letters) == true)
 		{
-			System.out.println(word +" may be composed by with letters "+Arrays.toString(letters));
+			System.out.println(word0 +" may be composed by with letters "+Arrays.toString(letters));
 		}
 		else
-			System.out.println(word +" may not be composed with "+Arrays.toString(letters));
+			System.out.println(word0 +" may not be composed with "+Arrays.toString(letters));*/
+		
+		Scanner sc1 = new Scanner(System.in);
+		System.out.println("please a letter list");
+		char[] letters = sc1.nextLine().toLowerCase().toCharArray();
+		System.out.print("[");
+		for (String s : sce.dico.getWordsThatCanBeComposed(letters))
+		{
+			System.out.print(s+", ");
+		}
+		System.out.println("]");
+		//System.out.println(sce.dico.getWordsThatCanBeComposed(letters));
+		
 	}
 
 }
