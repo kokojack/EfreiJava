@@ -6,21 +6,39 @@ public class Noeud
 	private Noeud filsg;
 	private Noeud filsd;
 	
-	public Noeud ()
+	public Noeud (int val)
 	{
-		
+		this.val = val;
+		filsg = null;
+		filsd = null;
 	}
+	
+	
 	public Noeud getjilsg()
 	{
 		return filsg;
 	}
+	public void setfilsg(Noeud n)
+	{
+		this.filsg = n;
+	}
+	
 	public Noeud getjilsd()
 	{
 		return filsd;
 	}
+	public void setfilsd(Noeud n)
+	{
+		this.filsd = n;
+	}
+	
 	public int getval()
 	{
 		return val;
+	}
+	public void setval (int val)
+	{
+		this.val = val;
 	}
 
 	
