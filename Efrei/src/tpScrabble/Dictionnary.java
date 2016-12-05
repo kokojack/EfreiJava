@@ -87,8 +87,8 @@ public class Dictionnary
 			int ind = chaineletters1.indexOf('*');
 			for (int i = 0; i < alphabetLetters.length; i++)
 			{
-				chaineletters1.charAt(ind) = alphabetLetters[i];
-				StringBuilder chaineletters = new StringBuilder(chaineletters1);
+				 letters[ind] = alphabetLetters[i];
+				StringBuilder chaineletters = new StringBuilder(letters);
 				for (int j = 0; j < word.length(); j++)
 				{
 
